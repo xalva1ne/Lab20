@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #000;
+            font-family: 'Jomolhari', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #fc0303;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #fc0303;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #777777;
+            border: 1px solid #fc0303;
+            color: #fff;
+        }
+
+        input[type="submit"] {
+            background-color: #fc0303;
+            color: #222;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ffc107;
+        }
+
+        a {
+            color: #fc0303;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Добавить персонажа</h1>
+    <form method="post" action="{{ url_for('add') }}">
+        <label for="name">Имя:</label>
+        <input type="text" name="name" required>
+
+        <label for="attr">Аттрибут:</label>
+        <input type="text" name="attr">
+
+        <label for="description">Описание:</label>
+        <textarea style="height:200px;" name="description"></textarea>
+
+        <input type="submit" value="Добавить персонажа">
+    </form>
+    <a href="{{ url_for('index') }}">Вернуться</a>
+</body>
+</html>
